@@ -1,0 +1,102 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container to hold the sections */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Section box styling */
+.box {
+    position: relative;
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #d3d3d3;
+    width: 100%; /* Full width on small devices */
+}
+
+/* Section title styling */
+.section-title {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff9999; /* Default title color */
+    padding: 10px 15px;
+    border: 1px solid black;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Specific section title colors */
+.box:nth-child(1) .section-title {
+    background-color: #ff9999; /* Chicken */
+}
+
+.box:nth-child(2) .section-title {
+    background-color: #ff4d4d; /* Beef */
+}
+
+.box:nth-child(3) .section-title {
+    background-color: #ffcc66; /* Sushi */
+}
+
+/* Text inside sections */
+.box p {
+    margin-top: 60px; /* Push the content down to avoid overlap with section title */
+}
+
+/* Desktop view (992px and above) */
+@media (min-width: 992px) {
+    .box {
+        width: 30%; /* 3 equal columns */
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet view (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: 48%; /* 2 equal columns */
+        margin-bottom: 20px;
+    }
+
+    .box:nth-child(3) {
+        width: 100%; /* Full width for 3rd section */
+    }
+}
+
+/* Mobile view (767px and below) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+    }
+    
+    .box {
+        width: 100%; /* Each section takes full width */
+        margin-bottom: 20px;
+    }
+
+    /* Additional spacing adjustments for better readability */
+    .box p {
+        margin-top: 40px; /* Keep space between title and text */
+    }
+}
